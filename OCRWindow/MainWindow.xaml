@@ -1,0 +1,29 @@
+﻿<Window x:Class="OCRWindow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ocrWindow="clr-namespace:OCRWindow"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <ocrWindow:MainWindowViewModel/>
+    </Window.DataContext>
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <Button Command="{Binding ShowProcessPickerWindow}" Content="Process Picker"/>
+        </StackPanel>
+        <StatusBar DockPanel.Dock="Bottom" Height="30">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Selected Process" VerticalAlignment="Center" FontWeight="Bold"/>
+                <TextBlock VerticalAlignment="Center">
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat="{}({0}) - {1}">
+                            <Binding Path="SelectedProcess.Id"/>
+                            <Binding Path="SelectedProcess.Name"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+            </StackPanel>
+        </StatusBar>
+        <!--<DataGrid ItemsSource="{Binding ResultsGrid}" AutoGenerateColumns="True"/>-->
+        <!--<TextBlock Text="{Binding OutputText}" Background="LightGray" Foreground="White"/>-->
+    </DockPanel>
+</Window>
