@@ -9,6 +9,7 @@
     <DockPanel>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
             <Button Command="{Binding ShowProcessPickerWindow}" Content="Process Picker"/>
+            <Button Command="{Binding ShowAreaSelectionWindow}" Content="Area Selection"/>
         </StackPanel>
         <StatusBar DockPanel.Dock="Bottom" Height="30">
             <StackPanel Orientation="Horizontal">

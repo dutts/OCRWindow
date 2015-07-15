@@ -77,6 +77,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\AreaSelectionOverlay\AreaSelectionOverlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,6 +89,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controls\AreaSelectionOverlay\AreaSelectionOverlay.xaml.cs">
+      <DependentUpon>AreaSelectionOverlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AreaSelectionOverlay\AreaSelectionViewModel.cs" />
+    <Compile Include="Controls\AreaSelectionOverlay\DesiredWindowPosition.cs" />
     <Compile Include="Controls\CloseAwareWindow.cs" />
     <Compile Include="PInvoke\RECT.cs" />
     <Compile Include="Interfaces\IRequestCloseViewModel.cs" />

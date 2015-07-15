@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using Microsoft.Practices.Prism.Mvvm;
 
 namespace OCRWindow.Controls.ProcessPicker
@@ -31,6 +32,18 @@ namespace OCRWindow.Controls.ProcessPicker
         {
             get { return _process ?? (_process = Process.GetProcessById((int) Id)); }
         }
+
+        private IntPtr? _handle;
+        public IntPtr Handle
+        {
+            get
+            {
+                if (_handle == null) _handle = Process.MainWindowHandle;
+                return (IntPtr) _handle;
+            }
+        }
+
+
     }
 
 }
