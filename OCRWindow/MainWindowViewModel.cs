@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
 using OCRWindow.Controls;
@@ -16,7 +17,7 @@ namespace OCRWindow
                 return _showProcessPickerWindow ?? (_showProcessPickerWindow = new DelegateCommand(() =>
                 {
                     var ppvm = new ProcessPickerViewModel();
-                    var processPickerWindow = new CloseAwareWindow{ Content = new Controls.ProcessPicker.ProcessPicker { DataContext = ppvm }};
+                    var processPickerWindow = new CloseAwareWindow{ Content = new ProcessPicker(),  DataContext = ppvm };
 
                     WeakEventManager<ProcessPickerViewModel, EventArgs<ProcessData>>.AddHandler(ppvm, "ProcessSelected", (sender, args) =>
                     {
